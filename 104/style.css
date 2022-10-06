@@ -1,0 +1,27 @@
+body {
+    background-color: mistyrose;
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+span {
+    color: #ff6f61;
+    text-decoration: underline;
+    font-size: 0.8em;
+}
+
+.my-div {
+    background-color: deeppink;
+    color: white;
+}
+
+.my-div>.children::first-letter {
+    color: black;
+    /* test 실패 */
+}
+
+li:hover {
+    background-color: white;
+}
