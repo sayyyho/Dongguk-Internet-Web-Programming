@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head><title>div와 span의 확장</title>
+        <style>
+            div div {
+                display: inline-block; 
+                width: 100px; height: 60px;
+                top:10px; left:20px;
+                text-align: center; padding-top: 30px;
+                font-weight: bold;}
+            #relative {
+                position:relative;
+                background-color: red;}
+            #static {
+                position:static;
+                background-color: orange;}
+            #absolute {
+                position:absolute;
+                background-color: yellow;}
+            #fixed {
+                position:fixed;
+                background-color: green;}
+            #float-left {
+                float:left;
+                background-color: blue;}
+            #float-right {
+                float:right;
+                background-color: purple;}
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="relative">relative</div>
+            <div id="static">static</div>
+            <div id="absolute">absolute</div>
+            <div id="fixed">fixed</div>
+            <br>
+            <div id="float-left">float-left</div>
+            <div id="float-right">float-right</div>
+        </div>
+    </body>
+</html>
