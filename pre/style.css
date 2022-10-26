@@ -1,0 +1,129 @@
+* {
+    text-align: center;
+}
+
+body {
+    background-color: beige;
+}
+
+h3{
+    background-color: darkcyan;
+}
+
+#box-model {
+    background-color: yellow;
+    padding: 10px;
+    border: 7px solid black;
+    margin-top: 10px;
+}
+
+span{
+    background-color: white;
+}
+
+#round {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: dimgray;
+    border-radius: 50px 5px; 
+    border-style: dotted;
+    /* 하나만 설정하면 다 그 픽셀 
+    두 개면 대각선 같은구조  
+    네 개면 시계방향 */
+}
+
+#shadow-model {
+    text-shadow: 3px 4px 2px red;
+    /* 오른쪽으로 3px 아래로 4px 흐려짐 정도 2px */
+}
+
+#shadow-box {
+    border : 5px solid grey;
+    padding: 15px;
+    box-shadow: 3px 4px 2px 5px black;
+    /*  내부는 inset 위,왼
+        디폴트는 오른쪽 아래로 이동
+        즉 3px 오른쪽 4px 아래쪽
+        흐림은 2px
+        그림자 크기 5px
+    */
+}
+
+#relative-box > div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+}
+
+#rel-div {
+    position: relative;
+    left : 20px;
+    top : 20px;
+    /* 오른쪽 20
+       아래로 20
+    */
+}
+
+#absol-box {
+    position: absolute;
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    left: 200px;
+    top: 350px;
+    /* 기준점 왼쪽 끝 상단 기준 얼만큼 절대고정 시킬건가 */
+}
+
+#fixed-box {
+    position: fixed;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    right: 50px;
+    bottom: 50px;
+}
+
+#float-box-left {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: darksalmon;
+}
+
+#z-index-absol-box{
+    margin-top: 110px;
+    position: absolute;
+}
+
+#z-index-absol-box > div{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+#st-1{
+    background-color: dodgerblue;
+    left: 70px;
+    top: 0px;
+    z-index: -3;
+}
+
+#st-2{
+    background-color: firebrick;
+    left: 100px;
+    top: 15px;
+    z-index: 1;
+}
+
+#st-3{
+    background-color: lightblue;
+    left: 130px;
+    top: 30px;
+    z-index: 4;
+    /* 부모기준 앱솔 적용 */
+}
+
+#st-3 span{
+    visibility: hidden;
+}
