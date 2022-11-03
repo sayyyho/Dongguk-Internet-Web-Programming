@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const yourName = prompt("이름을 입력해주세요.");
+        document.write("안녕하세요 " + yourName + "님 좋은 하루 보내세요!");
+        if (confirm("해당 페이지에 이미지를 불러올까요?")){
+            document.write('<br><img src="https://dthezntil550i.cloudfront.net/7c/latest/7c1901052334083980006978189/1280_960/95991f53-6c9b-426e-8bc2-1fb5d43a4c45.png">');
+        }
+        else{
+            document.write("<br><br>이미지를 출력하지 않았습니다.")
+        }
+    </script>
+</body>
+</html>
