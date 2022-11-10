@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let start = prompt("시작 값 입력하세요");
+        let end = prompt("종료 값 입력하세요");
+        start = parseInt(start);
+        end = parseInt(end);
+        let summation = 0;
+        for(let i = start; i<=end; i++){
+            summation += i;
+        }
+        document.write(summation);
+    </script>
+</body>
+</html>
