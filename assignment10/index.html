@@ -24,12 +24,12 @@
             document.write("<h2>입력하신 나이는" +age+"입니다. " + "12세 미만은 이용할 수 없습니다.</h2>");
         }
         else{
-            let num = parseInt(prompt("0부터 입력값 까지의 합을 구해드리겠습니다."));
+            let num = parseInt(prompt("입력한 숫자까지 짝수들의 합을 출력합니다."));
             let acc = 0;            
-            for(let i = 0; i<=num; i++){
+            for(let i = 0; i<=num; i+=2){
                 acc += i;
             }
-            document.write("<br><span> 0부터 " + num +"까지 덧셈은 : </span>" + acc);
+            document.write("<br><span> 0부터 " + num +"까지 짝수들의 합은 : </span>" + acc);
         }
     </script>
 </body>
