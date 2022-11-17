@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호로 알아보는 당신의 운세</title>
+    <script>
+        // 난수 중복 체크
+        function checkNum(num, randomNumber){
+            for(i = 0; i < randomNumber.length; i+=1){
+                if (num == randomNumber[i]) return 0
+            }
+            return num 
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let inputData = prompt("번호를 입력하세요")
+        let numberArray = new Array();
+        let randomNumber = new Array();
+        let date = new Date(); // 오늘 날짜 초기화
+        let index = 0; // 난수 배열 인덱스를 위한 초기화
+        numberArray = inputData.split(" ")
+        while(index < numberArray.length){
+            let number = checkNum(Math.floor(Math.random() * 46), randomNumber); 
+            if(number){ //유효성 검사 후 0이 아니면 난수 배열에 push
+                randomNumber.push(check)
+                index +=1 
+            }
+        }
+        let check = 0 // 입력 배열과 난수 배열의 일치하는 수 체크를 위한 변수 초기화
+        for (i = 0; i < numberArray.length; i++){
+            let num = parseInt(numberArray[i]) //기존 배열에는 문자열로 입력 받았기 때문에 사용
+            for (j = 0; j <numberArray.length; j++ ){
+                if (num == randomNumber[j]){
+                    check++;
+                    break; //겹치면 반복문 탈출
+                }
+            }
+        }
+        alert("오늘의 로또번호는 : " + randomNumber);
+        alert(check + "개를 맞췄습니다");
+        document.write("오늘의 날짜 : " + date + "<br>")
+        document.write("로또 마감일 : ")
+        if (date.getDay()==6) document.write(date); // .getDay() method의 반환 값 : 0 -> 일 1 -> 월 ... 6-> 토
+        else {
+            const correction = 6 - date.getDay() // 토요일이 되기 전까지 남은 날짜 계산 후 
+            const lottoDay = new Date(date.setDate(date.getDate() + correction)); //
+            lottoDay.setHours(20,00,00)
+            document.write(lottoDay)
+        }
+        document.write("<br> 오늘의 로또번호는 : " + randomNumber + "<br>")
+    </script>
+</body>
+</html>
