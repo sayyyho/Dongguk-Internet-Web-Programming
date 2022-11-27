@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019112127 박세호</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #my-list span{
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function changeColor(){
+            if(document.body.style.backgroundColor == "black"){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }
+            else{
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }
+        }
+        function addMusic(){
+            let music = document.querySelector("#music").value;
+            let singer = document.querySelector("#singer").value;
+            let album = document.querySelector("#album").value;
+            let info = document.createElement("span");
+            let myList = document.querySelector("#my-list");
+            let img = document.createElement("img")
+            let br = document.createElement("br")
+            let span = document.createElement("span")
+            info.innerText = music + "-" + singer;  
+            img.setAttribute("src", album);
+            img.setAttribute("width", 150);
+            img.setAttribute("height", 150);
+            myList.append(span);
+            span.appendChild(img);
+            span.appendChild(br)
+            span.appendChild(info)
+        }
+    </script>
+</head>
+<body>
+    <h2>나만의 플레이리스트</h2>
+    <hr>
+    <span id="control" onclick="changeColor()">다크모드로 보기/해제</span>
+    <div id="add-contents">
+        <h4>플레이 리스트에 추가할 노래 정보를 입력하세요.</h4>
+        <form action="">
+            노래 : <input id="music" type="text" name="" id="">
+            <br>
+            가수 : <input id="singer" type="text" name="" id="">
+            <br>
+            사진 : <input id="album" type="text" name="" id=""> 
+            <br>
+            <input type="button" onclick="addMusic()"value="추가하기">
+        </form>        
+    </div>
+    <div id="my-list"></div>
+</body>
+</html>
