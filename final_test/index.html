@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let p;
+        function init() { // 문서가 완전히 로드되었을 때 호출
+            p = document.getElementById("change");
+            p.onmouseover = function () { // 익명 함수
+                this.style.backgroundColor = "orchid";
+            };
+            p.addEventListener("mouseout",
+                function () { this.style.backgroundColor = "white"; } // 익명 함수
+            );
+        }
+        function myalert(event){
+            console.log(event.type);
+        }
+    </script>
+</head>
+
+<body>
+    <h3 id="change">마우스를 올려서 색 변경</h3>
+    <h2 id="mouseov">마우스 올려봐라</h2>
+    <script>
+        init();
+        document.getElementById("mouseov").onmouseover = myalert;
+        
+        let i = 1
+
+        let checksec = setInterval(()=>{
+            console.log(i);
+            doRotate();
+            i+=1;
+        },1000) 
+
+    //    setTimeout(()=>{
+    //     console.log("checking");
+    //     clearInterval(checksec); // setinterval 종료
+    //    }, 5000);
+
+    changeText = document.getElementById("change");
+    changeText.onclick = function (event){
+        clearInterval(checksec);
+    }
+    function doRotate() {
+        let str = changeText.innerHTML;
+        let firstChar = str.substr(0, 1);
+        let remains = str.substr(1, str.length-1); str = remains + firstChar; changeText.innerHTML = str;
+    }
+   </script>
+</body>
+</html>

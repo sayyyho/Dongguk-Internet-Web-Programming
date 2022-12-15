@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>동국짜장</title>
+   <style>
+      @font-face {
+         font-family: 'ChosunGs';
+         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+      }
+
+      body { text-align: center; background-color: darksalmon;}
+
+      h1 {font-family: 'ChosunGs', sans-serif;}
+
+      #menu_div{display:inline-block; margin:5vh; padding:5px; border:5px solid black; background-color: firebrick; color:white;}
+
+      label { display: inline-block; text-align: center; }
+
+      img { width: 20vh; height: 20vh;}
+
+      #class_img { width: 10vh; height: 10vh; }
+   </style>
+</head>
+
+<body>
+   <h1>동국짜장 메뉴판</h1>
+   <div>
+      <img id="class_img" src="https://cdn.lolchess.gg/images/lol/tier/iron_1.png"
+         alt="회원등급"><br>
+      회원등급 <select id="class_select" onchange="">
+         <option value="https://cdn.lolchess.gg/images/lol/tier/iron_1.png">일반</option>
+         <option value="https://cdn.lolchess.gg/images/lol/tier/gold_1.png">골드</option>
+         <option value="https://cdn.lolchess.gg/images/lol/tier/silver_1.png">실버</option>
+         <option value="https://cdn.lolchess.gg/images/lol/tier/bronze_1.png">브론즈</option>
+      </select><br>
+   </div>
+   <br>
+   <div id="menu_div">
+      <label>
+         <img src="https://i.ytimg.com/vi/Yn8ZFTBCJJQ/maxresdefault.jpg"><br>
+         <input type="checkbox" name="menu_check" value="짜장면/6000">짜장면 - 6000원
+      </label>
+      <label style="display: inline-block;">
+         <img src="http://image.auction.co.kr/itemimage/23/76/79/23767905a6.jpg"><br>
+         <input type="checkbox" name="menu_check" value="짬뽕/7000">짬뽕 - 7000원
+      </label>
+      <label style="display: inline-block;">
+         <img src="https://t1.daumcdn.net/cfile/tistory/253ECC4A5617933305"><br>
+         <input type="checkbox" name="menu_check" value="탕수육/15000">탕수육 - 15000원
+      </label>
+      <label style="display: inline-block;">
+         <img src="https://img-cf.kurly.com/shop/data/goodsview/20211026/gv30000237325_1.jpg"><br>
+         <input type="checkbox" name="menu_check" value="볶음밥/6000">볶음밥 - 6000원
+      </label><br>
+      <button id="add_button" onclick="">메뉴 추가</button><br>
+   </div>
+   <br>
+   <textarea id="menu_area" cols="30" rows="10" placeholder="선택된 메뉴가 없습니다." readonly></textarea>
+   <div>
+      <select id="pay_select" onchange="">
+         <option value="">결제방법을 선택하세요.</option>
+         <option value="toss">토스 결제</option>
+         <option value="kakao">카카오페이 결제</option>
+         <option value="card">신용카드 결제</option>
+         <option value="contact">직접 만나서 결제</option>
+      </select>
+   </div>
+   <button id="pay_button" onclick="">결제하기</button><br>
+   <script src="main.js"></script>
+</body>
+</html>

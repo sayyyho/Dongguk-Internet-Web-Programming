@@ -14,7 +14,8 @@
             return num; 
         }
         function findDay(correction, today){
-            let lottoDay = new Date(today.setDate(today.getDate() + correction)); // 토요일까지 남은 날짜 더해서 해당 주 토요일로 보정
+            let lottoDay = new Date();
+            lottoDay.setDate(today.getDate() + correction); // 토요일까지 남은 날짜 더해서 해당 주 토요일로 보정
             lottoDay.setHours(20,00,00); // 로또 시간은 20시에 마감이므로 고정적으로 세팅
             document.write(lottoDay.toLocaleString());
         }

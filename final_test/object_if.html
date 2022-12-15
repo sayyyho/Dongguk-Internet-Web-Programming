@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>테스트를 위한 span태그</span>
+    <form action="">
+        <input type="text" id="name">
+        <input type="text" id="num">
+    </form>
+    <script>
+        let myspan = document.querySelector("span");
+        myspan.addEventListener("click", ()=>{
+            window.location ="https://www.sayyyho.site";
+        });
+        let name = document.getElementById("name");
+        name.addEventListener("blur",check)
+        // console.log(name.value);
+        function check()
+        {
+            console.log(1);
+            if(name.value=="")
+            {
+                console.log(1);
+                name.focus();
+            }
+        }
+        
+    </script>
+</body>
+</html>
